@@ -41,6 +41,13 @@ while True:
 
     elif(choice==3):
         print("search employee selected")
+
+        empcode = input("enter the employee number: ")
+        sql = 'SELECT `id`, `empname`, `designation`, `salary`, `companyname`, `phone`, `emailid`, `password` FROM `employees` WHERE `empcode` =' +empcode
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
+
     elif(choice==4):
         print("update employee selected")
     elif(choice==5):
